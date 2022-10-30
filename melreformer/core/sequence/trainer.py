@@ -39,13 +39,13 @@ class SequenceTrainer(BaseTrainer):
         n_segment: int,
         start_time: str,
         base_dir: str,
-        dataset: str | None = None,
         lr: float = 3e-4,
         adam_betas: tuple[float, float] = (0.9, 0.99),
         prime_size: int = 9,
     ) -> None:
         super().__init__(
-            base_dir=base_dir, start_time=start_time
+            base_dir=base_dir,
+            start_time=start_time,
         )
         self.save_hyperparameters(
             Namespace(
@@ -53,7 +53,6 @@ class SequenceTrainer(BaseTrainer):
                 n_segment=n_segment,
                 start_time=start_time,
                 base_dir=base_dir,
-                dataset=dataset,
                 lr=lr,
                 adam_betas=adam_betas,
                 prime_size=prime_size,
