@@ -25,7 +25,8 @@ latest research a short while ago. (It works quite well with melspectrograms of 
 
 Here, a model would be used to invent high-level "ideas" for pieces of music.
 Critically, this representation can be of a small fixed size, making it compatible
-with existing, well-understood image synthesis models (e.g., StyleGAN2 or UNet-based image diffusion models).
+with existing, well-understood image synthesis models, such as StyleGAN2 or UNet-based image diffusion models.
+(I have run a few experiments of this kind using StyleGAN2, and it seems to be able to perform this task very well.)
 
 Some modifications would be needed to these existing models, but those changes should be quite small.
 For example, if StyleGAN2 was tasked with modeling "images" of the form `[batch, 1, mel_channels, time]`,
