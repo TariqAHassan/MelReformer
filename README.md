@@ -25,12 +25,12 @@ latest research a short while ago. (It works quite well with melspectrograms of 
 
 Here, a model would be used to invent high-level "ideas" for pieces of music.
 Critically, this representation can be of a small fixed size, making it compatible
-with existing, well-understood image synthesis models (e.g., StyleGAN or UNet-based image diffusion models).
+with existing, well-understood image synthesis models (e.g., StyleGAN2 or UNet-based image diffusion models).
 
 Some modifications would be needed to these existing models, but those changes should be quite small.
 For example, if StyleGAN2 was tasked with modeling "images" of the form `[batch, 1, mel_channels, time]`,
 and `time` was fixed to 256, then we would also need to obtain the scalar which, when multiplied by 256, 
-would give us back the origional number of time steps (which could be used position a stop "token" in the expansion model, say).
+would give us back the origional number of time steps (which could be used to position a stop "token" in the expansion model, say).
 One simple way to do this would be to simultaneously train a layer on top of StyleGAN's style code, which emits 
 such a scalar. This scalar would then be fed into the discriminator along with the fake melspectrogram itself. 
 (The case with real data is easy because we would know the real melspectrogram's size before and after it was resized.)
