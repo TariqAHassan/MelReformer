@@ -14,15 +14,15 @@ pipeline:
 
 The motivation for this pipeline is threefold. First, it allows us to exploit existing
 and well-understood image synthesis models.<sup>*</sup> Second, the strong conditioning of the expansion
-model should, in principle, enable very good reconstructions, without the use of exotic attention
+model should, in principle, enable very good reconstructions, even without the use of exotic attention
 mechanisms. Third, an aggressive approach allows for streaming audio.
 
 \* I have performed some initial experiments using StyleGAN2 for this purpose, and it seems to perform quite well, 
 and I assume the same would be true of more recent UNet-based diffusion models.
 
-Also note that, in this work, recovering audio from the melspectrogram here is performed with a neural vocoder.
+Also note that, in this work, recovering audio from the melspectrogram is performed with a neural vocoder.
 Specifically, I use [HiFiHybrid](https://github.com/TariqAHassan/HiFiHybrid), which I implemented based on the
-latest research a short while ago. (It does quite a good job with musical data.)
+latest research a short while ago. (It works quite well with melspectrograms of music.)
 
 #### Idea Model
 
@@ -58,14 +58,16 @@ $n=32$ was used.
 
 ### Results so far (Zooming in can help 😊)
 
-Reconstruction at inference time with teacher forcing enabled:
+Below you can find some examples of what the expansion model produces after 63 epochs.
+
+#### Reconstruction at inference time with teacher forcing enabled:
 
 ![](/assets/epoch_recon_63.png)
 
 Note: the images on the left of each "block" are the originals, and the image on the right are the corresponding
 reconstructions.
 
-Results without teacher forcing (goal):
+#### Results without teacher forcing (goal):
 
 ![](/assets/epoch_condn_63.png)
 
