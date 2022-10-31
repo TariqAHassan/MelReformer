@@ -63,6 +63,12 @@ values of $n$.
 I have pooled the [Maestro V3](https://magenta.tensorflow.org/datasets/maestro) and 
 [MusicNet](https://zenodo.org/record/5120004#.Y18uZi0r0YI) datasets.
 
+### Training
+
+```shell
+python train_sequence.py /path/to/maestro/,path/to/musicnet --vocoder_path=path/to/hifivocoder.ckpt
+```
+
 ### Results (Zooming in can help 😊)
 
 Below you can find some examples of what the expansion model produces after 63 epochs
