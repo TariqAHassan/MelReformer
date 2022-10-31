@@ -20,7 +20,7 @@ from torch.nn import functional as F
 from melreformer.core.sequence.transformer.model import Transformer
 from melreformer.core.sequence.loss import ReconstructionLoss
 
-from melreformer.core.vocoder.trainer import HiFiTrainer
+from hifihybrid.hifi import HiFiHybrid
 from melreformer.utils.audio import audio_saver, spec_grid_saver  # noqa
 from melreformer.utils.general import get_git_metadata
 from melreformer.utils.metrics import BestMetricTracker
@@ -59,7 +59,7 @@ class SequenceTrainer(BaseTrainer):
             )
         )
 
-        hifi: HiFiTrainer = HiFiTrainer.load_from_checkpoint(
+        hifi: HiFiHybrid = HiFiHybrid.load_from_checkpoint(
             checkpoint_path=vocoder_path,
             map_location="cpu",
         )
