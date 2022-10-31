@@ -84,13 +84,22 @@ was shown, it would match what is found in the figure above (which relies on tea
 
 Even without teacher forcing, the model does seem to do a reasonably good job of reconstructing the melspectrogram
 (although there are a few clear failures, such as the example in the top right). However, while the overall
-structure is often and generally good, the reconstruction is blurry. This stems directly from the fact that the model 
-is trained to minimize the L1 reconstruction error. There are several approaches one could explore to eliminate this and 
-restore the high-frequency information, namely:
+structure is often and generally good, the reconstruction is blurry. 
+
+## Future Directions
+
+The blurriness stems directly from the fact that the model is trained to minimize the L1 reconstruction error. 
+There are several approaches one could explore to eliminate this and restore the high-frequency information, namely:
 
   * Adding a discriminator, which has shown success in other domains like vocoders, neural image compression, etc.
   * Training this model as a diffusion model, although this does complicate the problem of variable length inputs.
-  * Preprocessing the input a pre-trained RQ-VAE and training the model with cross entropy. This may be possibly by 
-    attempting to repurpose the Spatial/Depth Transformer paradigm proposed in 
+  * Preprocessing the input a pre-trained neural audio compression model and training the model with cross entropy.
+    This may be possibly by attempting to repurpose the Spatial/Depth Transformer paradigm proposed in 
     [Autoregressive Image Generation using Residual Quantization](https://arxiv.org/abs/2203.01941). (Instead of a 
    "Depth Transformer" this transformer would be responsible for decoding $n$ adjacent melspectogram columns.)
+
+While each of these approaches is appealing, I am most partial to the last one.
+Why? A vocoder can be seen as an autoencoder, with a 2D latent space and fixed encoder (the melspectrogram transform). 
+Under this framing, a neural audio compression model can be viewed as a drop-in replacement,
+with potentially much better reconstruction capabilities because, in part, it is not constrained to having
+a fixed encoder.
