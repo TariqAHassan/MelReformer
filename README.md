@@ -2,6 +2,8 @@
 
 Resizing inversion of variable length melspectrograms using vanilla Encoder/Decoder Transformer.
 
+Please note that this repository contains ongoing work, and is not a final result (yet).
+
 ## Overview
 
 The immediate goal of this repository is to explore using a vanilla Encoder/Decoder Transformer architecture
