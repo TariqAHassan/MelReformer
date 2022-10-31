@@ -20,7 +20,7 @@ and I assume the same would be true of more recent UNet-based diffusion models.
 
 Also note that, in this work, recovering audio from the melspectrogram here is performed with a neural vocoder.
 Specifically, I use [HiFiHybrid](https://github.com/TariqAHassan/HiFiHybrid), which I implemented based on the
-latest research a short while ago, and it pretty well with music.
+latest research a short while ago, and it performs quite well with music.
 
 #### Idea model. 
 
