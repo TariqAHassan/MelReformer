@@ -9,3 +9,4 @@ torchvision==0.14.0
 torchaudio==0.13.0
 tqdm==4.63.0
 wandb==0.13.4
+git+git://github.com/TariqAHassan/HifiHybrid
