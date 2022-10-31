@@ -52,7 +52,7 @@ This folding/stacking trick is quite appealing because, if made to work properly
 a way to model extremely long pieces of music sourced from raw audio. The arithmetic here
 is quite simple. If $n=32$, and 23 seconds of audio results in 2048 melspectrogram columns, then
 the transformer only needs to model 64 time steps. If we increase the length of the audio by `8x`
-we would be able to model 184 seconds (~3 minutes) of audio, while only needing to model 512 timesteps
+we would be able to model 184 seconds (~3 minutes) of audio, while only needing to represent 512 timesteps
 in the decoder. Of course, It remains to be seen if this can _actually_ be done, and if so under what
 values of $n$.
 
