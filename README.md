@@ -109,7 +109,7 @@ There are several approaches one could explore to eliminate this and restore the
     can be done because the compressed codes are discrete.
        * This may be possibly by attempting to repurpose the Spatial/Depth Transformer paradigm proposed in
          [Autoregressive Image Generation using Residual Quantization](https://arxiv.org/abs/2203.01941). (Instead of 
-       a "Depth Transformer" this transformer would be responsible for decoding $n$ adjacent melspectogram columns.)
+         a "Depth Transformer" this transformer would be responsible for decoding $n$ adjacent melspectogram columns.)
 
 While each of these approaches is appealing, I am most partial to the last one.
 Why? A vocoder can be seen as an autoencoder, with a 2D latent space and fixed encoder (the melspectrogram transform). 
