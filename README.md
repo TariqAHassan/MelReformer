@@ -110,7 +110,7 @@ There are several approaches one could explore to eliminate this and restore the
        * One way to do this would be to repurpose Spatial/Depth Transformer paradigm proposed in
          [Autoregressive Image Generation using Residual Quantization](https://arxiv.org/abs/2203.01941). 
         (Instead of a "Depth Transformer" this transformer would be responsible for decoding $n$ adjacent timesteps.)
-       * Another idea is to use the discreteness of the latent codes only after inference time, to perform
+       * Another idea is to use the discreteness of the latent codes only at inference time, to perform
          online error correction and mitigate the accumulation of errors that typically encumber
          autoregressive models. This idea is scoped out a bit more [here](https://github.com/TariqAHassan/MelReformer/issues/2).
 
