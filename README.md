@@ -1,6 +1,6 @@
 # MelReformer
 
-Resizing inversion of variable length melspectrograms using vanilla Encoder/Decoder Transformer.
+Resizing inversion of variable length melspectrograms using a vanilla Encoder/Decoder Transformer.
 
 Please note that this repository contains ongoing work, and is not a final result (yet).
 
