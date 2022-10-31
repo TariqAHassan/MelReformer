@@ -69,7 +69,7 @@ Results without teacher forcing (goal):
 Note: here, only the reconstruction is shown (i.e., part on the right). If the original was
 shown too, it would be the same as the corresponding "block" in the teacher forcing example above.
 
-Even without teacher forcing, he model does seem to do a reasonably good job of reconstructing the melspectrogram
+Even without teacher forcing, the model does seem to do a reasonably good job of reconstructing the melspectrogram
 (although there are a few clear failures, such as the example in the top right). However, while the overall
 structure is often and generally good, the reconstruction is blurry. This stems directly from the fact that the model 
 is trained to minimize the L1 reconstruction error. There are several approaches one could explore to eliminate this and 
