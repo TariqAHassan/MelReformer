@@ -31,7 +31,7 @@ with existing, well-understood image synthesis models, such as StyleGAN2 or UNet
 Some modifications would be needed to these existing models, but those changes should be quite small.
 For example, if StyleGAN2 was tasked with modeling "images" of the form `[batch, 1, mel_channels, time]`,
 and `time` was fixed to 256, then we would also need to obtain the scalar which, when multiplied by 256, 
-would give us back the original number of time steps (which could be used to position a stop "token" in the expansion model, say).
+would give us back the origional number of time steps (which could be used to position a stop "token" in the expansion model, say).
 One simple way to do this would be to simultaneously train a layer on top of StyleGAN's style code, which emits 
 such a scalar. This scalar would then be fed into the discriminator along with the fake melspectrogram itself. 
 (The case with real data is easy because we would know the real melspectrogram's size before and after it was resized.)
@@ -106,11 +106,13 @@ There are several approaches one could explore to eliminate this and restore the
 
   * Adding a discriminator, which has shown success in other domains like vocoders, neural image compression, etc.
   * Training this model as a diffusion model, although this does complicate the problem of variable length inputs.
-  * Switching to a pre-trained neural audio compression model and training the model with cross entropy, which
-    can be done because the compressed codes are discrete.
-       * This may be possibly by attempting to repurpose the Spatial/Depth Transformer paradigm proposed in
-         [Autoregressive Image Generation using Residual Quantization](https://arxiv.org/abs/2203.01941). (Instead of 
-         a "Depth Transformer" this transformer would be responsible for decoding $n$ adjacent timesteps.)
+  * Switching to a pre-trained neural audio compression model and leverage its discrete latent codes
+       * One way to do this would be to repurpose Spatial/Depth Transformer paradigm proposed in
+         [Autoregressive Image Generation using Residual Quantization](https://arxiv.org/abs/2203.01941) 
+        (Instead of a "Depth Transformer" this transformer would be responsible for decoding $n$ adjacent timesteps.)
+       * Another idea is to use the discreteness of the latent codes only after inference time, to perform
+         online error correction and mitigate the accumulation of errors that typically encumber
+         autoregressive models. This idea is scoped out a bit more [here](https://github.com/TariqAHassan/MelReformer/issues/2).
 
 While each one of these approaches has its appeal, I am most partial to the last one.
 Why? A vocoder can be seen as an autoencoder, with a 2D latent space and fixed encoder (the melspectrogram transform). 
