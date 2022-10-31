@@ -30,8 +30,8 @@ with existing, well-understood image synthesis models (e.g., StyleGAN or UNet-ba
 
 Some modifications would be needed to these existing models, but those changes should be quite small.
 For example, if StyleGAN2 was tasked with modeling "images" of the form `[batch, 1, mel_channels, time]`,
-and `time` was fixed to 256, then we would also need to obtain the scalar which would give us back
-the origional number of time steps (which could be used position a stop "token" in the expansion model, say).
+and `time` was fixed to 256, then we would also need to obtain the scalar which, when multiplied by 256, 
+would give us back the origional number of time steps (which could be used position a stop "token" in the expansion model, say).
 One simple way to do this would be to simultaneously train a layer on top of StyleGAN's style code, which emits 
 such a scalar. This scalar would then be fed into the discriminator along with the melspectrogram itself. 
 (The case with real data is easy because we would know the real melspectrogram's size before and after it was resized.)
