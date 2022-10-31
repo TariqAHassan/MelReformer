@@ -50,7 +50,8 @@ Results without teacher forcing (goal):
 
 ![](/assets/epoch_condn_63.png)
 
-Note: here the original is the same as it is above. 
+Note: here, only the reconstruction is shown (i.e., part on the right). If the original was
+shown too, it would be the same as the corresponding "block" in the teacher forcing example above.
 
 As you can see, in both cases, the reconstructed melspectrogram is blurry.
 This stems directly from the fact that the model is trained to minimize the L1
