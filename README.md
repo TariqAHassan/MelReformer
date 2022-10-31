@@ -71,7 +71,7 @@ python train_sequence.py /path/to/maestro,path/to/musicnet --vocoder_path=path/t
 
 Note that the dataloader here relies on caching. That is, the data loader will request
 a random chunk of audio from a random file in the dataset. If the request file has not been 
-encountered before, it first be decoded and persisted to cache as a pickled pytorch tensor.
+encountered before, it first be decoded and persisted to the cache as a pickled pytorch tensor.
 Once this has been done for all files in the dataset, data loading is *very* fast, 
 however it comes at the cost of some very slow initial epochs.
 
