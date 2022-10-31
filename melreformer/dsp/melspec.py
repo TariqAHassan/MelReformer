@@ -106,13 +106,13 @@ if __name__ == "__main__":
 
     PLOT: bool = False
     SAMPLE_RATE = 22_050
-    N_SEGMENTS = 4
+    N_SEGMENTS = 64
     SEQ_LEN: int = 8192
     DURATION = (SEQ_LEN * N_SEGMENTS) / SAMPLE_RATE
 
     self = MelSpec(SEQ_LEN, sr=SAMPLE_RATE)
 
-    y, _ = librosa.load(librosa.ex("trumpet"), sr=self.sr, duration=DURATION)
+    y, _ = librosa.load(librosa.ex("sweetwaltz"), sr=self.sr, duration=DURATION)
     y = torch.from_numpy(y).unsqueeze(0)
 
     X = self.forward(y)
