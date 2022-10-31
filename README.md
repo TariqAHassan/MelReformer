@@ -37,7 +37,7 @@ such a scalar. This scalar would then be fed into the discriminator along with t
 
 #### Expansion Model
 
-In order to invert the resizing use to train the idea model, an encoder/decoder transformer
+In order to invert the resizing used to train the idea model, an encoder/decoder transformer
 can be trained. The basic structure here is to condition the transformer on the musical
 idea developed by the _Idea Model_, and use that conditioning to guide the (autoregressive) decoder.
 
