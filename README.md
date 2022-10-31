@@ -46,8 +46,7 @@ autoregressively decoding each column of the melspectrogram is problematic. Conc
 the expanded melspectrogram is 2048 columns long (representing ~23 sec of audio at 22050 samples/second),
 which is well beyond what can be done with a vanilla attention meachism on modest hardware. 
 So, drawing inspiration from ViT, I propose "folding"/stacking $n$ adjaent columns on top of one another,
-feeding them into the transformer, and then "unfolding"/unstacking the output. In the experimental results shown below, 
-$n=32$ was used. 
+feeding them into the transformer, and then "unfolding"/unstacking the output. 
 
 This folding/stacking trick is quite appealing because, if made to work properly, it provides
 a way to model extremely long pieces of music directly from the raw audio. The arithmetic here
@@ -66,7 +65,8 @@ I have pooled the [Maestro V3](https://magenta.tensorflow.org/datasets/maestro) 
 
 ### Results (Zooming in can help 😊)
 
-Below you can find some examples of what the expansion model produces after 63 epochs.
+Below you can find some examples of what the expansion model produces after 63 epochs
+using $n=32$.
 
 #### Reconstruction at inference time with teacher forcing enabled:
 
