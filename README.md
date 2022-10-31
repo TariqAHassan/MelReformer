@@ -37,7 +37,7 @@ So, drawing inspiration from ViT, we propose "folding"/stacking $n$ adjaent colu
 feeding them into the transformer, and then "unfolding"/unstacking the output. In the result shown below,
 $n=32$ was used. 
 
-### Results (so far)
+### Results so far [Zooming in can help :)]
 
 Reconstruction with teach enabled:
 
