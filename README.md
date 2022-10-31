@@ -13,14 +13,11 @@ pipeline:
 ![](/assets/Music%20Pipeline.png)
 
 The motivation for this pipeline is threefold. First, it allows us to exploit existing
-and well-understood image synthesis models.<sup>*</sup> Second, the strong conditioning of the expansion
+and well-understood image synthesis models. Second, the strong conditioning of the expansion
 model should, in principle, enable very good reconstructions, even without the use of exotic attention
 mechanisms. Third, an aggressive approach allows for streaming audio.
 
-\* I have performed some initial experiments using StyleGAN2 for this purpose, and it seems to perform quite well, 
-and I assume the same would be true of more recent UNet-based diffusion models.
-
-Also note that, in this work, recovering audio from the melspectrogram is performed with a neural vocoder.
+Not shown: in this work, recovering audio from the melspectrogram is performed with a neural vocoder.
 Specifically, I use [HiFiHybrid](https://github.com/TariqAHassan/HiFiHybrid), which I implemented based on the
 latest research a short while ago. (It works quite well with melspectrograms of music.)
 
