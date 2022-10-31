@@ -5,6 +5,7 @@
 
 """
 from pathlib import Path
+
 import pytorch_lightning as pl
 from pytorch_lightning.utilities.types import (  # noqa
     _METRIC_COLLECTION as METRIC_COLLECTION,

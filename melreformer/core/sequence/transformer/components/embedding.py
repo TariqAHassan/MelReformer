@@ -3,9 +3,10 @@
     Embedding
 
 """
+from math import sqrt
+
 import torch
 from torch import nn
-from math import sqrt
 
 
 class Embedding(nn.Module):

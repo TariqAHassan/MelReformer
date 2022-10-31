@@ -5,6 +5,7 @@
 """
 import torch
 from torch import nn
+
 from melreformer.core.sequence.transformer.components.attn import MultiHeadAttention
 from melreformer.core.sequence.transformer.components.feedforward import (
     PositionwiseFeedForward,

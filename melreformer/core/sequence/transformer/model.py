@@ -3,14 +3,16 @@
     Transformer Model
 
 """
+from typing import Optional
+
 import torch
 from torch import nn
-from typing import Optional
-from tqdm import trange
 from torch.nn import functional as F
+from tqdm import trange
+
+from melreformer.core.sequence.transformer.components.pos_enc import PositionalEncoding
 from melreformer.core.sequence.transformer.decoder import Decoder
 from melreformer.core.sequence.transformer.encoder import Encoder
-from melreformer.core.sequence.transformer.components.pos_enc import PositionalEncoding
 
 
 class EncoderHead(nn.Module):

@@ -10,6 +10,7 @@ from argparse import Namespace
 from typing import Any
 
 import torch
+from hifihybrid.hifi import HiFiHybrid
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.utilities.types import (  # noqa
     _METRIC_COLLECTION as METRIC_COLLECTION,
@@ -17,16 +18,14 @@ from pytorch_lightning.utilities.types import (  # noqa
 from pytorch_lightning.utilities.warnings import LightningDeprecationWarning
 from torch.nn import functional as F
 
-from melreformer.core.sequence.transformer.model import Transformer
+from melreformer.core.base_trainer import BaseTrainer
 from melreformer.core.sequence.loss import ReconstructionLoss
-
-from hifihybrid.hifi import HiFiHybrid
+from melreformer.core.sequence.transformer.model import Transformer
 from melreformer.utils.audio import audio_saver, spec_grid_saver  # noqa
 from melreformer.utils.general import get_git_metadata
 from melreformer.utils.metrics import BestMetricTracker
 from melreformer.utils.parsing import to_numeric
 from melreformer.utils.training import compute_total_norm
-from melreformer.core.base_trainer import BaseTrainer
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore", category=LightningDeprecationWarning)

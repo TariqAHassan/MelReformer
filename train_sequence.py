@@ -3,17 +3,15 @@
     Train Sequence Model
 
 """
-from pathlib import Path
-
-import torch
-
-import wandb
-import fire
-from typing import Optional
 from datetime import datetime
 from itertools import chain
 from multiprocessing import cpu_count
+from pathlib import Path
+from typing import Optional
 
+import fire
+import torch
+import wandb
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
