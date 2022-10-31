@@ -102,4 +102,5 @@ While each of these approaches is appealing, I am most partial to the last one.
 Why? A vocoder can be seen as an autoencoder, with a 2D latent space and fixed encoder (the melspectrogram transform). 
 Under this framing, a neural audio compression model like [EnCodec](https://github.com/facebookresearch/encodec) 
 can be viewed as a drop-in replacement, with potentially much better reconstruction capabilities because, in part, 
-it is not constrained to having a fixed encoder.
+it is not constrained to having a fixed encoder, much less one which does not account for the Heisenberg-Gabor Uncertainty Principle
+(see [wikipedia/Short-time Fourier transform](https://en.wikipedia.org/wiki/Short-time_Fourier_transform)).
