@@ -60,7 +60,7 @@ Reconstruction at inference time with teacher forcing enabled:
 
 ![](/assets/epoch_recon_63.png)
 
-Note: the images on the left are the originals, and the image on the right are the corresponding
+Note: the images on the left of each "block" are the originals, and the image on the right are the corresponding
 reconstructions.
 
 Results without teacher forcing (goal):
