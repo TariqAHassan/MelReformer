@@ -8,7 +8,7 @@ The immediate goal of this repository is to explore using a vanilla Encoder/Deco
 to reconstruct resized melspectrograms. The broader goal is to realize the following music generation
 pipeline:
 
-[](/assets/Music%20Pipeline.png)
+![](/assets/Music%20Pipeline.png)
 
 ### Components:
   
@@ -41,14 +41,14 @@ $n=32$ was used.
 
 Reconstruction with teach enabled:
 
-[](/assets/epoch_recon_63.png)
+![](/assets/epoch_recon_63.png)
 
 Note: the images on the left are the originals, and the image on the right are the corresponding
 reconstructions.
 
 Results without teacher forcing (goal):
 
-[](/assets/epoch_condn_63.png)
+![](/assets/epoch_condn_63.png)
 
 Note: here the original is the same as it is above. 
 
