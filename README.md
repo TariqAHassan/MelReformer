@@ -72,15 +72,15 @@ using $n=32$.
 
 ![](/assets/epoch_recon_63.png)
 
-Note: the images on the left of each "block" are the originals, and the image on the right are the corresponding
-reconstructions.
+Interpretation: each section (denoted by a white boarder) contains two images: the origional (left)
+and the reconstruction (right).
 
 #### Results without teacher forcing (goal):
 
 ![](/assets/epoch_condn_63.png)
 
-Note: here, only the reconstruction is shown (i.e., part on the right). If the original was
-shown too, it would be the same as the corresponding "block" in the teacher forcing example above.
+Note: here, only the reconstruction (i.e., part on the right) is shown. If the left part
+was shown, it would match what is found in the figure above (which relies on teacher forcing).
 
 Even without teacher forcing, the model does seem to do a reasonably good job of reconstructing the melspectrogram
 (although there are a few clear failures, such as the example in the top right). However, while the overall
