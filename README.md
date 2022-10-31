@@ -16,7 +16,7 @@ pipeline:
 
 Here, a model would be used to invent high-level "ideas" for pieces of music.
 Critically, this representation can be of a small fixed size, making it compatible
-with existing image synthesis models (e.g., StyleGAN or UNet-based image diffusion models).
+with existing, well-understood image synthesis models (e.g., StyleGAN or UNet-based image diffusion models).
 
 #### Expansion model
 
@@ -39,7 +39,7 @@ $n=32$ was used.
 
 ### Results so far (Zooming in can help 😊)
 
-Reconstruction with teach enabled:
+Reconstruction at inference time with teacher forcing enabled:
 
 ![](/assets/epoch_recon_63.png)
 
