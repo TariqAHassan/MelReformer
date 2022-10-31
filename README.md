@@ -54,7 +54,7 @@ a way to model extremely long pieces of music directly from the raw audio. The a
 is quite simple. If $n=32$, and 23 seconds of audio results in 2048 melspectrogram columns, then
 the transformer only needs to model 64 time steps. If we increase the length of the audio by `8x`
 we would be able to model 184 seconds (~3 minutes) of audio, while only needing to model 512 timesteps
-in the decoder. It remains to be seen if this can actually be done of course, and if so under what
+in the decoder. Of course, It remains to be seen if this can _actually_ be done, and if so under what
 values of $n$.
 
 ## Experiments
