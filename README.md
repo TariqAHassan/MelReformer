@@ -66,7 +66,7 @@ I have pooled the [Maestro V3](https://magenta.tensorflow.org/datasets/maestro) 
 ### Training
 
 ```shell
-python train_sequence.py /path/to/maestro/,path/to/musicnet --vocoder_path=path/to/hifivocoder.ckpt
+python train_sequence.py /path/to/maestro,path/to/musicnet --vocoder_path=path/to/hifivocoder.ckpt
 ```
 
 Note that the dataloader here relies on caching. That is, the data loader will request
