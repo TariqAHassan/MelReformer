@@ -22,7 +22,7 @@ Also note that, in this work, recovering audio from the melspectrogram here is p
 Specifically, I use [HiFiHybrid](https://github.com/TariqAHassan/HiFiHybrid), which I implemented based on the
 latest research a short while ago, and it performs quite well with music.
 
-#### Idea model. 
+#### Idea Model
 
 Here, a model would be used to invent high-level "ideas" for pieces of music.
 Critically, this representation can be of a small fixed size, making it compatible
@@ -36,7 +36,7 @@ One simple way to do this would be to simultaneously train a layer on top of Sty
 such a scalar. This scalar would then be fed into the discriminator along with the melspectrogram itself. 
 (The case with real data is easy because we would know the real melspectrogram's size before and after it was resized.)
 
-#### Expansion model
+#### Expansion Model
 
 In order to invert the resizing use to train the idea model, an encoder/decoder transformer
 can be trained. The basic structure here is to condition the transformer on the musical
