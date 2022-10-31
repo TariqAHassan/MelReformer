@@ -47,11 +47,12 @@ audio, meaning the resulting music could start playing almost instantly, rather 
 to wait for the entire piece of audio to be rendered.
 
 There is a wrinkle here, however. Because the attention of the transformer is quadratic,
-autoregressively decoding each column of the melspectrogram is problematic. Concretely, in the example above,
+autoregressively decoding each column of the melspectrogram is problematic. Concretely, in the diagram above,
 the expanded melspectrogram is 2048 columns long (representing ~23 sec of audio at 22050 samples/second),
 which is well beyond what can be done with a vanilla attention meachism on modest hardware. 
 So, drawing inspiration from ViT, I propose "folding"/stacking $n$ adjaent columns on top of one another,
-feeding them into the transformer, and then "unfolding"/unstacking the output. In the result shown below, $n=32$ was used. 
+feeding them into the transformer, and then "unfolding"/unstacking the output. In the experimental results shown below, 
+$n=32$ was used. 
 
 ### Results so far (Zooming in can help 😊)
 
