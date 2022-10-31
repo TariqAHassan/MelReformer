@@ -15,7 +15,7 @@ pipeline:
 The motivation for this pipeline is threefold. First, it allows us to exploit existing
 and well-understood image synthesis models. Second, the strong conditioning of the expansion
 model should, in principle, enable very good reconstructions, even without the use of exotic attention
-mechanisms. Third, an aggressive approach allows for streaming audio.
+mechanisms. Third, an autoregressive approach allows for streaming audio.
 
 Not shown: in this work, recovering audio from the melspectrogram is performed with a neural vocoder.
 Specifically, I use [HiFiHybrid](https://github.com/TariqAHassan/HiFiHybrid), which I implemented based on the
