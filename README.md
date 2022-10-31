@@ -49,7 +49,7 @@ So, drawing inspiration from ViT, I propose "folding"/stacking $n$ adjaent colum
 feeding them into the transformer, and then "unfolding"/unstacking the output. 
 
 This folding/stacking trick is quite appealing because, if made to work properly, it provides
-a way to model extremely long pieces of music directly from the raw audio. The arithmetic here
+a way to model extremely long pieces of music sourced from raw audio. The arithmetic here
 is quite simple. If $n=32$, and 23 seconds of audio results in 2048 melspectrogram columns, then
 the transformer only needs to model 64 time steps. If we increase the length of the audio by `8x`
 we would be able to model 184 seconds (~3 minutes) of audio, while only needing to model 512 timesteps
