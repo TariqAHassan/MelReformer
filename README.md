@@ -40,10 +40,6 @@ such a scalar. This scalar would then be fed into the discriminator along with t
 In order to invert the resizing use to train the idea model, an encoder/decoder transformer
 can be trained. The basic structure here is to condition the transformer on the musical
 idea developed by the _Idea Model_, and use that conditioning to guide the (autoregressive) decoder.
-This approach has a few advantages. First, the melspectrogram contains rich conditioning information, 
-which is far more precise than, say, text. Second, as stated above, an autoregressive approach allows for streaming
-audio, meaning the resulting music could start playing almost instantly, rather than having 
-to wait for the entire piece of audio to be rendered.
 
 There is a wrinkle here, however. Because the attention of the transformer is quadratic,
 autoregressively decoding each column of the melspectrogram is problematic. Concretely, in the diagram above,
@@ -52,6 +48,14 @@ which is well beyond what can be done with a vanilla attention meachism on modes
 So, drawing inspiration from ViT, I propose "folding"/stacking $n$ adjaent columns on top of one another,
 feeding them into the transformer, and then "unfolding"/unstacking the output. In the experimental results shown below, 
 $n=32$ was used. 
+
+This folding/stacking trick is quite appealing because, if made to work properly, it provides
+a way to model extremely long pieces of music directly from the raw audio. The arthmatic here
+is quite simple. If $n=32$, and 23 seconds of audio results in 2048 melspectrogram columns, then
+the transformer only needs to model 64 time steps. If we increase the length of the audio by `8x`
+we would be able to model 184 seconds (~3 minutes) of audio, while only needing to model 512 timesteps
+in the decoder. It remains to be seen if this can actually be done of course, and if so under what
+values of $n$.
 
 ## Experiments
 
