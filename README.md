@@ -56,7 +56,14 @@ So, drawing inspiration from ViT, I propose "folding"/stacking $n$ adjaent colum
 feeding them into the transformer, and then "unfolding"/unstacking the output. In the experimental results shown below, 
 $n=32$ was used. 
 
-### Results so far (Zooming in can help 😊)
+## Experiments
+
+### Data
+
+I have pooled the [Maestro V3](https://magenta.tensorflow.org/datasets/maestro) and 
+[MusicNet](https://zenodo.org/record/5120004#.Y18uZi0r0YI) datasets.
+
+### Results (Zooming in can help 😊)
 
 Below you can find some examples of what the expansion model produces after 63 epochs.
 
